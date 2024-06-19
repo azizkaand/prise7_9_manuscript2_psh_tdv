@@ -765,5 +765,5 @@ view_df(df,
 saveRDS(df, file = "data/prise_simulated_data.rds")
 
 ### Export as .csv
-# write.csv(df, "~/Desktop/prise_simulated_data.csv", row.names = FALSE)
+ write.csv(df, "data/prise_simulated_data.csv", row.names = FALSE)
 
