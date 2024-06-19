@@ -1,0 +1,185 @@
+---
+title: "The Longitudinal Association Between Early Peer Sexual Harassment and Later Dating Violence"
+# subtitle: "A preregistration of secondary data analysis on PRISE Data"
+date: today
+date-format: long
+
+
+csl: apa7.csl
+bibliography: references.bib
+
+author:
+  - name: Aziz-Kaan Dönmez
+    affil-id: 1
+  - name: Carolina Lunde
+    affil-id: 1
+
+affiliations: 
+  - id: 1
+    name: University of Gothenburg
+
+format: 
+  pdf:
+    keep-tex: true
+    template-partials: 
+      - title.tex
+    include-in-header:
+      text: |
+        \usepackage[noblocks]{authblk}
+        \renewcommand*{\Authsep}{, }
+        \renewcommand*{\Authand}{, }
+        \renewcommand*{\Authands}{, }
+        \renewcommand\Affilfont{\small}
+---
+
+A preregistration of secondary data analysis on PRISE Data
+
+## Title
+
+The Longitudinal Association Between Early Peer Sexual Harassment and Later Dating Violence
+
+## Description
+
+Sexual harassment (SH) is often conceptualised as unsolicited behaviour with a sexual nature that can take either verbal or physical forms [@hill2011]. It can occur both in-person, for example at school, or electronically through social media using phones or computers. Studies on SH among youth have primarily focused on middle-to-high school students, where roughly 50% of students in grades 7-12 in American samples report being victims of SH [@hill2011], and similar frequencies are reported in Swedish samples [@ståhl2021]. Although the prevalence rates of SH are similar for boys and girls, the types of SH types seem to differ. For example, girls report experiencing more unwanted comments, touch and gestures whereas boys report experiencing more homosexual slurs, and visual types (shown or given unwanted sexual pictures, photos, messages. or notes; @chiodo2009a.
+
+Revictimization is a term describing the increased risk of being a victim of one or multiple types of aggression after an initial instance of one or multiple types of aggressions [@finkelhor2007]. It has been observed in various situations. Chiodo and colleagues (2009) observed it among victims of SH, it has also been observed among victims of child sexual abuse such that individuals are revictimized both in adolescence [@miron2014] and in adulthood (see @classen2001). The rates of revictimisation among victims of child sexual abuse ranges from 66% in @classen2005 to a mean prevalence rate of 47.9% in a recent meta-analysis [@walker2019]. However, the variability in the point estimate of 47.9% in @walker2019 ranged from 10-90% and the authors identifies various reasons for the variability among estimated revictimization rates across the included studies. Some of the factors are gender, age and definitions. It is clear that when investigating revictimization one needs to be cognizant of the contextual factors in which the initial victimisation occurs.
+
+The aim of this paper is therefore to investigate the longitudinal association between SH victimisation and subsequent dating violence victimisation. This is done in the context of the revictimisation theory which states that individuals who are victims of one or multiple types of aggressions are more likely to be victims of same or other types of victimisations in the future. Furthermore, we are interested in whether there is a dose-dependent relationship between SH victimisation subsequent dating violence. We would expect a stronger association between SH victimisation and dating violence victimisation for individuals who report being sexual harassment at more time points.
+
+## Hypotheses
+
+**H1:** Higher levels of peer-victimization (sexual harassment) at earlier grades (4, 5, 6, 7 and 7) will predict higher levels of dating-violence victimization at grade 8.
+
+**H2:** Previous SH victimisation will be associated with subsequent SH victimisation.
+
+**H3:** The association between SH victimisation and TDV victimisation will be moderated by gender such that the association will be stronger for girls compared to boys.
+
+# Design Plan
+
+## Study type
+
+**Observational Study**. The study started in 2019 when participants were in grade 4. It is ongoing and the last wave of data collection (4th) were conducted in 2023. The next wave (5th) is planned to be collected in the first half of 2024, at which point the participants will be in grade 8.
+
+## Study design
+
+The data for this paper will come from the ongoing longitudinal PRISE-project. In short, the PRISE project recruited participants from schools around in Västra Götaland, Sweden. The first wave of data collection was conducted in 2019 and new ones have been collected yearly since then. The project is, as of right now (2023-11-27), in its 4th wave with plans to collect the 5th wave in February 2024. It has adopted a survey methodology where a comprehensive list of variables related to peer-victimization and its correlates are measured through questionnaires. The majority of participants fills out the questionnaire in school with the presence of a research personnel. However, those who are absentee at the time of data-collection, or those students who are not in the recruited schools are given the opportunity to fill out the questionnaire at home.
+
+# Sampling Plan
+
+## Existing data
+
+**Registration following analysis of the data**. As of the date of submission, some of the data used for this paper has been accessed and analyzed. However, the analysis conducted has primarily been psychometric evaluations of the peer sexual harassment scale (PSH-C; one of the main predictor variables in this paper). This has been done for T1 (grade 4), T3 (grade 6) and T4 (grade 7). However, the author AKD has not analysed any associations between the three different time points. Furthermore, psychometric evaluations have been conducted on the outcome variable (Dating Violence) for T4, but no associations between the outcome variable and predictor variables have been conducted prior to date.
+
+## Explanation of existing data
+
+Much of the variables of interest from the existing data has been psychometrically investigated (code used for these analysis will be made available in the osf page: https://osf.io/hg4ep/). That is, a confirmatory factor analysis have been ran on the variables. However, no cross-sectional or longitudinal associations between the variables have been investigated. The author conducting the analyses (AKD) have not been involved with data-collection prior to T4.
+
+## Data collection procedures
+
+Schools around the Västra Götaland region in Sweden were contacted and asked to participate in the study. The process of selecting schools was primarily guided by the enrollment patterns of participants in the PRISE study. In instances where participants transitioned to a different school for grade 7, schools were chosen based on the destination schools for the majority of graduating students. This decision was informed by data obtained from the elementary school management office of the regional municipality. Essentially, the selection hinged on a combination of the original schools attended by PRISE participants and, when applicable, the schools to which most students from the graduating schools transitioned, as indicated by information from the regional elementary school management office. A total of 25 schools were contacted, 11 of which agreed to participate. Guardians of students in grade 7 were sent information about the study, and consent forms via post. The schools were then visited, and students whos' guardians had given consent were given information about the study and then asked to participate in the study. Students whos' parents had given consent but were absent from class during the time of data-collection, and students from the PRISE study that did not attend any of the recruited schools, were contacted via post and asked to participate in the study online at home.
+
+## Sample size and rationale
+
+The original PRISE 4-6 study determined sample size using power calculations. From @skoog2019 : "*The sample size, N= 1000, is based on conventional calculations [@cohen1988], aiming for 80% power, .05 alpha, the ability to detect small effect sizes, and using more than ten predictors [@miles2001]. The size further accounts for some attrition (10%) that might occur over the study period."*
+
+The sample size of the continuation of the project, that is PRISE 7-9, is following the same students and has therefore no power calculations but instead attempted to recruit as many of the participants in PRISE 4-6 as possible.
+
+# Variables
+
+## Measured variables
+
+The following variables are measured in the PRISE questionnaire:
+
+Children and Adolescent Social Support Scale [@kerresmalecki2002]
+
+Self-Perceived Popularity [@vandenabeele2014]
+
+The Victim Scale [@rigby1998]
+
+Children Self-Efficacy Scale [@bandura2006]
+
+Conflict in Adolescent Dating Relationships Inventory [@wolfe2001]
+
+Measure of Adolescent Relationship Harassment and Abuse [@rothman2022]
+
+Revised Conflict Tactics Scale [@straus1996]
+
+Peer Sexual Harassment Scale - Child [@valik2023]
+
+Online Sexual Harassment [@gámez-guadix2021]
+
+Restricted Freedom of Movement [@calogero2021]
+
+Pubertal Development Scale [@carskadon1993]
+
+The Body Esteem Scale for Adults and Adolescents [@mendelson2001]
+
+The Spence Children's Anxiety Scale [@spence1998]
+
+Center for Epidemiologic Studies Depression Scale-revised [@haroz2014]
+
+Self-Silencing Adolescent Femininity Ideology Scale [@tolman2000]
+
+Interpersonal Reactivity Index self-report [@davis1980]
+
+Dark Triad Dirty Dozen [@jonason2010]
+
+Problem Behaviour Frequency Scale [@farrell2016]
+
+Revised Life Orientation Test - Revised [@scheier1994]
+
+The Emotion Regulation Questionnaire for children & adolescents (ERQ-CA) [@gullone2012]
+
+The Flourishing Scale [@diener2009]
+
+The Children's Hope Scale [@snyder1997]
+
+Objectified Body Consciousness Scale: Youth [@lindberg2006]
+
+## Predictor variable
+
+**Peer Sexual Harassment:** Peer SH has been measured (and will be measured at grade 8) using the Peer Sexual Harassment Child Scale [@valik2023]. This is a 6 item measure asking participants whether they have experienced various situations. The items were prefaced with: "The following questions are about things that can happen in school against your will or things that do not feel good. Think about your (current grade) when rating the items. Remember that we do not disclose your answers.". Items were then presented and rated on a scale from: 1= Never; 2= Once; 3= Few times; 4= Many times
+
+## Outcome Variables
+
+**Teen Dating Violence:** The Measure of Adolescent Relationship Harassment and Abuse. [@rothman2022] was used to measure Teen Dating Violence. This is a 3 item measure rated as "YES this has happened" or "NO this has not happened".
+
+## Indices
+
+No indices will be used as we will use Structural Equation Modeling for our analyses.
+
+# Analysis Plan and Statistical models
+
+## Measurement Model Assessment
+
+Analysis 1. Confirmatory factor analyses will be conducted on the listed measures to confirm its factor structure. Analysis 2. A longitudinal and gender invariance analysis will be conducted in order to assess whether the factor structure of the measurements holds over time and gender.
+
+## H1 and H2
+
+Analysis 3. A Latent Variable Cross-lagged Panel Model will be used to assess the association between Sexual Harassment in grade 4, 5, 6, 7 and 8, and dating violence in grade 8.
+
+## H3
+
+Analysis 4. Gender will be added as a moderator to the same model used in in Analysis 3 in order to test whether there are significant differences in strengths of associations between boys and girls
+
+## Transformations
+
+Gender will be dummy-coded such that 1 represents Boys and 2 represents Girls.
+
+## Inference criteria
+
+Alpha levels will be set to .05, fit indices for the SEM models will be simulated using our specific factor structure instead of using conventional cut-off values.
+
+## Data exclusion
+
+Since our outcome variable is Teen Dating Violence, only participants who report having been in romantic relationships (defined as relationships or dating) will be included.
+
+## Missing data
+
+Multiple imputation will be performed using the Multivariate Imputation by Chained Equations (mice) package in R [@vanbuuren2011] . General victimisation (measured by The Victim Scale; @rigby1998 and online sexual harassment victimisation [@gámez-guadix2021] will be used as proxy-variables during the imputation.
+
+# Other
+
+Link to osf page: https://osf.io/hg4ep/
+
+# References

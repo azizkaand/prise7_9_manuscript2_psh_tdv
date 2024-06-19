@@ -1,0 +1,683 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\usepackage[noblocks]{authblk}
+\renewcommand*{\Authsep}{, }
+\renewcommand*{\Authand}{, }
+\renewcommand*{\Authands}{, }
+\renewcommand\Affilfont{\small}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={The Longitudinal Association Between Early Peer Sexual Harassment and Later Dating Violence},
+  pdfauthor={Aziz-Kaan Dönmez; Carolina Lunde},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{The Longitudinal Association Between Early Peer Sexual Harassment
+and Later Dating Violence}
+
+
+\author[1]{Aziz-Kaan Dönmez}
+\author[1]{Carolina Lunde}
+
+\affil[1]{University of Gothenburg}
+
+
+\date{June 19, 2024}
+\begin{document}
+\maketitle
+
+A preregistration of secondary data analysis on PRISE Data
+
+\subsection{Title}\label{title}
+
+The Longitudinal Association Between Early Peer Sexual Harassment and
+Later Dating Violence
+
+\subsection{Description}\label{description}
+
+Sexual harassment (SH) is often conceptualised as unsolicited behaviour
+with a sexual nature that can take either verbal or physical forms (Hill
+\& Kearl, 2011). It can occur both in-person, for example at school, or
+electronically through social media using phones or computers. Studies
+on SH among youth have primarily focused on middle-to-high school
+students, where roughly 50\% of students in grades 7-12 in American
+samples report being victims of SH (Hill \& Kearl, 2011), and similar
+frequencies are reported in Swedish samples (Ståhl \& Dennhag, 2021).
+Although the prevalence rates of SH are similar for boys and girls, the
+types of SH types seem to differ. For example, girls report experiencing
+more unwanted comments, touch and gestures whereas boys report
+experiencing more homosexual slurs, and visual types (shown or given
+unwanted sexual pictures, photos, messages. or notes; Chiodo et al.
+(2009).
+
+Revictimization is a term describing the increased risk of being a
+victim of one or multiple types of aggression after an initial instance
+of one or multiple types of aggressions (Finkelhor et al., 2007). It has
+been observed in various situations. Chiodo and colleagues (2009)
+observed it among victims of SH, it has also been observed among victims
+of child sexual abuse such that individuals are revictimized both in
+adolescence (Miron \& Orcutt, 2014) and in adulthood (see C. Classen et
+al. (2001)). The rates of revictimisation among victims of child sexual
+abuse ranges from 66\% in C. C. Classen et al. (2005) to a mean
+prevalence rate of 47.9\% in a recent meta-analysis (Walker et al.,
+2019). However, the variability in the point estimate of 47.9\% in
+Walker et al. (2019) ranged from 10-90\% and the authors identifies
+various reasons for the variability among estimated revictimization
+rates across the included studies. Some of the factors are gender, age
+and definitions. It is clear that when investigating revictimization one
+needs to be cognizant of the contextual factors in which the initial
+victimisation occurs.
+
+The aim of this paper is therefore to investigate the longitudinal
+association between SH victimisation and subsequent dating violence
+victimisation. This is done in the context of the revictimisation theory
+which states that individuals who are victims of one or multiple types
+of aggressions are more likely to be victims of same or other types of
+victimisations in the future. Furthermore, we are interested in whether
+there is a dose-dependent relationship between SH victimisation
+subsequent dating violence. We would expect a stronger association
+between SH victimisation and dating violence victimisation for
+individuals who report being sexual harassment at more time points.
+
+\subsection{Hypotheses}\label{hypotheses}
+
+\textbf{H1:} Higher levels of peer-victimization (sexual harassment) at
+earlier grades (4, 5, 6, 7 and 7) will predict higher levels of
+dating-violence victimization at grade 8.
+
+\textbf{H2:} Previous SH victimisation will be associated with
+subsequent SH victimisation.
+
+\textbf{H3:} The association between SH victimisation and TDV
+victimisation will be moderated by gender such that the association will
+be stronger for girls compared to boys.
+
+\section{Design Plan}\label{design-plan}
+
+\subsection{Study type}\label{study-type}
+
+\textbf{Observational Study}. The study started in 2019 when
+participants were in grade 4. It is ongoing and the last wave of data
+collection (4th) were conducted in 2023. The next wave (5th) is planned
+to be collected in the first half of 2024, at which point the
+participants will be in grade 8.
+
+\subsection{Study design}\label{study-design}
+
+The data for this paper will come from the ongoing longitudinal
+PRISE-project. In short, the PRISE project recruited participants from
+schools around in Västra Götaland, Sweden. The first wave of data
+collection was conducted in 2019 and new ones have been collected yearly
+since then. The project is, as of right now (2023-11-27), in its 4th
+wave with plans to collect the 5th wave in February 2024. It has adopted
+a survey methodology where a comprehensive list of variables related to
+peer-victimization and its correlates are measured through
+questionnaires. The majority of participants fills out the questionnaire
+in school with the presence of a research personnel. However, those who
+are absentee at the time of data-collection, or those students who are
+not in the recruited schools are given the opportunity to fill out the
+questionnaire at home.
+
+\section{Sampling Plan}\label{sampling-plan}
+
+\subsection{Existing data}\label{existing-data}
+
+\textbf{Registration following analysis of the data}. As of the date of
+submission, some of the data used for this paper has been accessed and
+analyzed. However, the analysis conducted has primarily been
+psychometric evaluations of the peer sexual harassment scale (PSH-C; one
+of the main predictor variables in this paper). This has been done for
+T1 (grade 4), T3 (grade 6) and T4 (grade 7). However, the author AKD has
+not analysed any associations between the three different time points.
+Furthermore, psychometric evaluations have been conducted on the outcome
+variable (Dating Violence) for T4, but no associations between the
+outcome variable and predictor variables have been conducted prior to
+date.
+
+\subsection{Explanation of existing
+data}\label{explanation-of-existing-data}
+
+Much of the variables of interest from the existing data has been
+psychometrically investigated (code used for these analysis will be made
+available in the osf page: https://osf.io/hg4ep/). That is, a
+confirmatory factor analysis have been ran on the variables. However, no
+cross-sectional or longitudinal associations between the variables have
+been investigated. The author conducting the analyses (AKD) have not
+been involved with data-collection prior to T4.
+
+\subsection{Data collection
+procedures}\label{data-collection-procedures}
+
+Schools around the Västra Götaland region in Sweden were contacted and
+asked to participate in the study. The process of selecting schools was
+primarily guided by the enrollment patterns of participants in the PRISE
+study. In instances where participants transitioned to a different
+school for grade 7, schools were chosen based on the destination schools
+for the majority of graduating students. This decision was informed by
+data obtained from the elementary school management office of the
+regional municipality. Essentially, the selection hinged on a
+combination of the original schools attended by PRISE participants and,
+when applicable, the schools to which most students from the graduating
+schools transitioned, as indicated by information from the regional
+elementary school management office. A total of 25 schools were
+contacted, 11 of which agreed to participate. Guardians of students in
+grade 7 were sent information about the study, and consent forms via
+post. The schools were then visited, and students whos' guardians had
+given consent were given information about the study and then asked to
+participate in the study. Students whos' parents had given consent but
+were absent from class during the time of data-collection, and students
+from the PRISE study that did not attend any of the recruited schools,
+were contacted via post and asked to participate in the study online at
+home.
+
+\subsection{Sample size and rationale}\label{sample-size-and-rationale}
+
+The original PRISE 4-6 study determined sample size using power
+calculations. From Skoog et al. (2019) : ``\emph{The sample size, N=
+1000, is based on conventional calculations (Cohen, 1988), aiming for
+80\% power, .05 alpha, the ability to detect small effect sizes, and
+using more than ten predictors (Miles \& Shevlin, 2001). The size
+further accounts for some attrition (10\%) that might occur over the
+study period.''}
+
+The sample size of the continuation of the project, that is PRISE 7-9,
+is following the same students and has therefore no power calculations
+but instead attempted to recruit as many of the participants in PRISE
+4-6 as possible.
+
+\section{Variables}\label{variables}
+
+\subsection{Measured variables}\label{measured-variables}
+
+The following variables are measured in the PRISE questionnaire:
+
+Children and Adolescent Social Support Scale (Kerres Malecki \&
+Kilpatrick Demary, 2002)
+
+Self-Perceived Popularity (Vanden Abeele et al., 2014)
+
+The Victim Scale (Rigby, 1998)
+
+Children Self-Efficacy Scale (Bandura, 2006)
+
+Conflict in Adolescent Dating Relationships Inventory (Wolfe et al.,
+2001)
+
+Measure of Adolescent Relationship Harassment and Abuse (Rothman et al.,
+2022)
+
+Revised Conflict Tactics Scale (Straus et al., 1996)
+
+Peer Sexual Harassment Scale - Child (Valik et al., 2023)
+
+Online Sexual Harassment (Gámez-Guadix \& Incera, 2021)
+
+Restricted Freedom of Movement (Calogero et al., 2021)
+
+Pubertal Development Scale (Carskadon \& Acebo, 1993)
+
+The Body Esteem Scale for Adults and Adolescents (Mendelson et al.,
+2001)
+
+The Spence Children's Anxiety Scale (Spence, 1998)
+
+Center for Epidemiologic Studies Depression Scale-revised (Haroz et al.,
+2014)
+
+Self-Silencing Adolescent Femininity Ideology Scale (Tolman \& Porche,
+2000)
+
+Interpersonal Reactivity Index self-report (Davis, 1980)
+
+Dark Triad Dirty Dozen (Jonason \& Webster, 2010)
+
+Problem Behaviour Frequency Scale (Farrell et al., 2016)
+
+Revised Life Orientation Test - Revised (Scheier et al., 1994)
+
+The Emotion Regulation Questionnaire for children \& adolescents
+(ERQ-CA) (Gullone \& Taffe, 2012)
+
+The Flourishing Scale (Diener et al., 2009)
+
+The Children's Hope Scale (Snyder et al., 1997)
+
+Objectified Body Consciousness Scale: Youth (Lindberg et al., 2006)
+
+\subsection{Predictor variable}\label{predictor-variable}
+
+\textbf{Peer Sexual Harassment:} Peer SH has been measured (and will be
+measured at grade 8) using the Peer Sexual Harassment Child Scale (Valik
+et al., 2023). This is a 6 item measure asking participants whether they
+have experienced various situations. The items were prefaced with: ``The
+following questions are about things that can happen in school against
+your will or things that do not feel good. Think about your (current
+grade) when rating the items. Remember that we do not disclose your
+answers.''. Items were then presented and rated on a scale from: 1=
+Never; 2= Once; 3= Few times; 4= Many times
+
+\subsection{Outcome Variables}\label{outcome-variables}
+
+\textbf{Teen Dating Violence:} The Measure of Adolescent Relationship
+Harassment and Abuse. (Rothman et al., 2022) was used to measure Teen
+Dating Violence. This is a 3 item measure rated as ``YES this has
+happened'' or ``NO this has not happened''.
+
+\subsection{Indices}\label{indices}
+
+No indices will be used as we will use Structural Equation Modeling for
+our analyses.
+
+\section{Analysis Plan and Statistical
+models}\label{analysis-plan-and-statistical-models}
+
+\subsection{Measurement Model
+Assessment}\label{measurement-model-assessment}
+
+Analysis 1. Confirmatory factor analyses will be conducted on the listed
+measures to confirm its factor structure. Analysis 2. A longitudinal and
+gender invariance analysis will be conducted in order to assess whether
+the factor structure of the measurements holds over time and gender.
+
+\subsection{H1 and H2}\label{h1-and-h2}
+
+Analysis 3. A Latent Variable Cross-lagged Panel Model will be used to
+assess the association between Sexual Harassment in grade 4, 5, 6, 7 and
+8, and dating violence in grade 8.
+
+\subsection{H3}\label{h3}
+
+Analysis 4. Gender will be added as a moderator to the same model used
+in in Analysis 3 in order to test whether there are significant
+differences in strengths of associations between boys and girls
+
+\subsection{Transformations}\label{transformations}
+
+Gender will be dummy-coded such that 1 represents Boys and 2 represents
+Girls.
+
+\subsection{Inference criteria}\label{inference-criteria}
+
+Alpha levels will be set to .05, fit indices for the SEM models will be
+simulated using our specific factor structure instead of using
+conventional cut-off values.
+
+\subsection{Data exclusion}\label{data-exclusion}
+
+Since our outcome variable is Teen Dating Violence, only participants
+who report having been in romantic relationships (defined as
+relationships or dating) will be included.
+
+\subsection{Missing data}\label{missing-data}
+
+Multiple imputation will be performed using the Multivariate Imputation
+by Chained Equations (mice) package in R (Van Buuren \&
+Groothuis-Oudshoorn, 2011) . General victimisation (measured by The
+Victim Scale; Rigby (1998) and online sexual harassment victimisation
+(Gámez-Guadix \& Incera, 2021) will be used as proxy-variables during
+the imputation.
+
+\section{Other}\label{other}
+
+Link to osf page: https://osf.io/hg4ep/
+
+\section*{References}\label{references}
+\addcontentsline{toc}{section}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-bandura2006}
+Bandura, A. (2006). Guide for constructing self-efficacy scales.
+\emph{Self-Efficacy Beliefs of Adolescents}, \emph{5}(1), 307--337.
+
+\bibitem[\citeproctext]{ref-calogero2021}
+Calogero, R. M., Tylka, T. L., Siegel, J. A., Pina, A., \& Roberts,
+T.-A. (2021). Smile pretty and watch your back: Personal safety anxiety
+and vigilance in objectification theory. \emph{Journal of Personality
+and Social Psychology}, \emph{121}(6), 1195--1222.
+\url{https://doi.org/10.1037/pspi0000344}
+
+\bibitem[\citeproctext]{ref-carskadon1993}
+Carskadon, M. A., \& Acebo, C. (1993). A self-administered rating scale
+for pubertal development. \emph{Journal of Adolescent Health},
+\emph{14}(3), 190--195.
+
+\bibitem[\citeproctext]{ref-chiodo2009a}
+Chiodo, D., Wolfe, D. A., Crooks, C., Hughes, R., \& Jaffe, P. (2009).
+Impact of Sexual Harassment Victimization by Peers on Subsequent
+Adolescent Victimization and Adjustment: A Longitudinal Study.
+\emph{Journal of Adolescent Health}, \emph{45}(3), 246--252.
+\url{https://doi.org/10.1016/j.jadohealth.2009.01.006}
+
+\bibitem[\citeproctext]{ref-classen2005}
+Classen, C. C., Palesh, O. G., \& Aggarwal, R. (2005). Sexual
+revictimization: A review of the empirical literature. \emph{Trauma,
+Violence, \& Abuse}, \emph{6}(2), 103--129.
+
+\bibitem[\citeproctext]{ref-classen2001}
+Classen, C., Field, N. P., Koopman, C., Nevill-Manning, K., \& Spiegel,
+D. (2001). Interpersonal problems and their relationship to sexual
+revictimization among women sexually abused in childhood. \emph{Journal
+of Interpersonal Violence}, \emph{16}(6), 495--509.
+
+\bibitem[\citeproctext]{ref-cohen1988}
+Cohen, S. (1988). \emph{Perceived stress in a probability sample of the
+united states.}
+
+\bibitem[\citeproctext]{ref-davis1980}
+Davis, M. H. (1980). \emph{Interpersonal reactivity index}.
+
+\bibitem[\citeproctext]{ref-diener2009}
+Diener, E., Wirtz, D., Biswas-Diener, R., Tov, W., Kim-Prieto, C., Choi,
+D., \& Oishi, S. (2009). New measures of well-being. \emph{Assessing
+Well-Being: The Collected Works of Ed Diener}, 247--266.
+
+\bibitem[\citeproctext]{ref-farrell2016}
+Farrell, A. D., Sullivan, T. N., Goncy, E. A., \& Le, A.-T. H. (2016).
+Assessment of adolescents{'} victimization, aggression, and problem
+behaviors: Evaluation of the problem behavior frequency scale.
+\emph{Psychological Assessment}, \emph{28}(6), 702.
+
+\bibitem[\citeproctext]{ref-finkelhor2007}
+Finkelhor, D., Ormrod, R. K., \& Turner, H. A. (2007).
+Poly-victimization: A neglected component in child victimization.
+\emph{Child Abuse \& Neglect}, \emph{31}(1), 7--26.
+
+\bibitem[\citeproctext]{ref-guxe1mez-guadix2021}
+Gámez-Guadix, M., \& Incera, D. (2021). Homophobia is online: Sexual
+victimization and risks on the internet and mental health among
+bisexual, homosexual, pansexual, asexual, and queer adolescents.
+\emph{Computers in Human Behavior}, \emph{119}, 106728.
+\url{https://doi.org/10.1016/j.chb.2021.106728}
+
+\bibitem[\citeproctext]{ref-gullone2012}
+Gullone, E., \& Taffe, J. (2012). The emotion regulation questionnaire
+for children and adolescents (ERQ{\textendash}CA): A psychometric
+evaluation. \emph{Psychological Assessment}, \emph{24}(2), 409.
+
+\bibitem[\citeproctext]{ref-haroz2014}
+Haroz, E. E., Ybarra, M. L., \& Eaton, W. W. (2014). Psychometric
+evaluation of a self-report scale to measure adolescent depression: The
+CESDR-10 in two national adolescent samples in the united states.
+\emph{Journal of Affective Disorders}, \emph{158}, 154--160.
+
+\bibitem[\citeproctext]{ref-hill2011}
+Hill, C., \& Kearl, H. (2011). \emph{Crossing the line: Sexual
+harassment at school.} ERIC.
+
+\bibitem[\citeproctext]{ref-jonason2010}
+Jonason, P. K., \& Webster, G. D. (2010). The dirty dozen: A concise
+measure of the dark triad. \emph{Psychological Assessment},
+\emph{22}(2), 420.
+
+\bibitem[\citeproctext]{ref-kerresmalecki2002}
+Kerres Malecki, C., \& Kilpatrick Demary, M. (2002). Measuring perceived
+social support: Development of the child and adolescent social support
+scale (CASSS). \emph{Psychology in the Schools}, \emph{39}(1), 1--18.
+
+\bibitem[\citeproctext]{ref-lindberg2006}
+Lindberg, S. M., Hyde, J. S., \& McKinley, N. M. (2006). A measure of
+objectified body consciousness for preadolescent and adolescent youth.
+\emph{Psychology of Women Quarterly}, \emph{30}(1), 65--76.
+
+\bibitem[\citeproctext]{ref-mendelson2001}
+Mendelson, B. K., Mendelson, M. J., \& White, D. R. (2001). Body-esteem
+scale for adolescents and adults. \emph{Journal of Personality
+Assessment}, \emph{76}(1), 90--106.
+
+\bibitem[\citeproctext]{ref-miles2001}
+Miles, J., \& Shevlin, M. (2001). \emph{Applying regression and
+correlation: A guide for students and researchers}. Sage.
+
+\bibitem[\citeproctext]{ref-miron2014}
+Miron, L. R., \& Orcutt, H. K. (2014). Pathways from childhood abuse to
+prospective revictimization: Depression, sex to reduce negative affect,
+and forecasted sexual behavior. \emph{Child Abuse \& Neglect},
+\emph{38}(11), 1848--1859.
+
+\bibitem[\citeproctext]{ref-rigby1998}
+Rigby, K. (1998). The relationship between reported health and
+involvement in bully/victim problems among male and female secondary
+schoolchildren. \emph{Journal of Health Psychology}, \emph{3}(4),
+465--476.
+
+\bibitem[\citeproctext]{ref-rothman2022}
+Rothman, E. F., Cuevas, C. A., Mumford, E. A., Bahrami, E., \& Taylor,
+B. G. (2022). The psychometric properties of the measure of adolescent
+relationship harassment and abuse (MARSHA) with a nationally
+representative sample of US youth. \emph{Journal of Interpersonal
+Violence}, \emph{37}(11-12), NP9712--NP9737.
+
+\bibitem[\citeproctext]{ref-scheier1994}
+Scheier, M. F., Carver, C. S., \& Bridges, M. W. (1994). Distinguishing
+optimism from neuroticism (and trait anxiety, self-mastery, and
+self-esteem): A reevaluation of the life orientation test. \emph{Journal
+of Personality and Social Psychology}, \emph{67}(6), 1063.
+
+\bibitem[\citeproctext]{ref-skoog2019}
+Skoog, T., Holmqvist Gattario, K., \& Lunde, C. (2019). Study protocol
+for PRISE: A longitudinal study of sexual harassment during the
+transition from childhood to adolescence. \emph{BMC Psychology},
+\emph{7}, 1--10.
+
+\bibitem[\citeproctext]{ref-snyder1997}
+Snyder, C. R., Hoza, B., Pelham, W. E., Rapoff, M., Ware, L., Danovsky,
+M., Highberger, L., Ribinstein, H., \& Stahl, K. J. (1997). The
+development and validation of the children{'}s hope scale. \emph{Journal
+of Pediatric Psychology}, \emph{22}(3), 399--421.
+
+\bibitem[\citeproctext]{ref-spence1998}
+Spence, S. H. (1998). A measure of anxiety symptoms among children.
+\emph{Behaviour Research and Therapy}, \emph{36}(5), 545--566.
+\url{https://doi.org/10.1016/S0005-7967(98)00034-5}
+
+\bibitem[\citeproctext]{ref-stuxe5hl2021}
+Ståhl, S., \& Dennhag, I. (2021). Online and offline sexual harassment
+associations of anxiety and depression in an adolescent sample.
+\emph{Nordic Journal of Psychiatry}, \emph{75}(5), 330--335.
+\url{https://doi.org/10.1080/08039488.2020.1856924}
+
+\bibitem[\citeproctext]{ref-straus1996}
+Straus, M. A., Hamby, S. L., Boney-McCoy, S. U. E., \& Sugarman, D. B.
+(1996). The revised conflict tactics scales (CTS2) development and
+preliminary psychometric data. \emph{Journal of Family Issues},
+\emph{17}(3), 283--316.
+
+\bibitem[\citeproctext]{ref-tolman2000}
+Tolman, D. L., \& Porche, M. V. (2000). The adolescent femininity
+ideology scale: Development and validation of a new measure for girls.
+\emph{Psychology of Women Quarterly}, \emph{24}(4), 365--376.
+
+\bibitem[\citeproctext]{ref-valik2023}
+Valik, A., Holmqvist Gattario, K., Lunde, C., \& Skoog, T. (2023).
+PSH-C: A measure of peer sexual harassment among children. \emph{Journal
+of Social Issues}, \emph{79}(4), 1123--1146.
+\url{https://doi.org/10.1111/josi.12517}
+
+\bibitem[\citeproctext]{ref-vanbuuren2011}
+Van Buuren, S., \& Groothuis-Oudshoorn, K. (2011). Mice: Multivariate
+imputation by chained equations in r. \emph{Journal of Statistical
+Software}, \emph{45}, 1--67.
+
+\bibitem[\citeproctext]{ref-vandenabeele2014}
+Vanden Abeele, M., Campbell, S. W., Eggermont, S., \& Roe, K. (2014).
+Sexting, mobile porn use, and peer group dynamics: Boys' and girls'
+self-perceived popularity, need for popularity, and perceived peer
+pressure. \emph{Media Psychology}, \emph{17}(1), 6--33.
+
+\bibitem[\citeproctext]{ref-walker2019}
+Walker, H. E., Freud, J. S., Ellis, R. A., Fraine, S. M., \& Wilson, L.
+C. (2019). The prevalence of sexual revictimization: A meta-analytic
+review. \emph{Trauma, Violence, \& Abuse}, \emph{20}(1), 67--80.
+
+\bibitem[\citeproctext]{ref-wolfe2001}
+Wolfe, D. A., Scott, K., Reitzel-Jaffe, D., Wekerle, C., Grasley, C., \&
+Straatman, A.-L. (2001). Development and validation of the conflict in
+adolescent dating relationships inventory. \emph{Psychological
+Assessment}, \emph{13}(2), 277.
+
+\end{CSLReferences}
+
+
+
+\end{document}
